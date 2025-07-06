@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const orderState = {
   values: ["pending", "cancelled", "shipped"],
-  message: `num validator failed for path ${PATH} with value ${VALUE}`,
+  message: 'num validator failed for path `{PATH}` with value `{VALUE}`',
 };
 const orderSchema = new mongoose.Schema({
   user: {
@@ -22,6 +22,7 @@ const orderSchema = new mongoose.Schema({
   state: {
     type: String,
     enum: orderState,
+    default: 'pending',
   },
   dateOrdered: {
     type: Date,
