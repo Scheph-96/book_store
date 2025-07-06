@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const bookSchema = new mongoose({
+const bookSchema = new mongoose.Schema({
     cover: {
         type: String,
         required: true
@@ -15,7 +15,7 @@ const bookSchema = new mongoose({
         required: true,
     },
     numberOfPages: {
-        type: NUmber
+        type: Number
     },
     summary: {
         type: String,
@@ -35,13 +35,16 @@ const bookSchema = new mongoose({
         required: true,
     },
     datePublished: {
-        type: Date
+        type: Date,
+        required: true,
     },
     rating: {
-        type: Number
+        type: Number,
+        default: 0
     },
     numberOfReviews: {
         type: Number,
+        default: 0
     }
 });
 
