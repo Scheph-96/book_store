@@ -83,7 +83,7 @@ const deleteBook = (req, res, next) => {
       next(err);
     }
 
-    Book.findByIdAndDelete(req.params.id, formidableFormParser(fields))
+    Book.findByIdAndDelete(req.params.id)
       .then((book) => {
         if (!book) {
           return res.status(404).json({ success: true, message: "no book found" });

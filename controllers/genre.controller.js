@@ -72,7 +72,7 @@ const deleteGenre = (req, res, next) => {
             next(err);
         }
 
-        Genre.findByIdAndDelete(req.params.id, formidableFormParser(fields))
+        Genre.findByIdAndDelete(req.params.id)
             .then((genre) => {
                 if (!genre) {
                     return res.status(404).json({ success: true, message: "no gender found" });

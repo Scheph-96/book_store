@@ -1,6 +1,5 @@
 const formidable = require('formidable');
 const { formidableFormParser, mongooseValidationErrorMessage } = require('../tools/util.tool');
-const {formidableFormParser, mongooseValidationErrorMessage} = require('../tools/util.tool');
 const Review = require('../models/review.model');
 
 const createReview = (req, res, next) => {
@@ -77,7 +76,7 @@ const deleteReview = (req, res, next) => {
             next(err);
         }
 
-        Review.findByIdAndDelete(req.params.id, formidableFormParser(fields))
+        Review.findByIdAndDelete(req.params.id)
         .then((review) => {
             if (review) {
                 return res.status(200).json({success: true, message: "review deleted successfully"});

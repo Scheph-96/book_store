@@ -95,7 +95,7 @@ const deleteAuthor = (req, res, next) => {
       next(err);
     }
 
-    Author.findByIdAndDelete(req.params.id, formidableFormParser(fields))
+    Author.findByIdAndDelete(req.params.id)
       .then((author) => {
         if (!author) {
           return res.status(404).json({ success: true, message: "no author found" });

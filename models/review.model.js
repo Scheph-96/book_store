@@ -5,6 +5,10 @@ const reviewSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     },
+    book: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Book'
+    },
     rate: {
         type: Number,
         required: true,
@@ -14,6 +18,5 @@ const reviewSchema = new mongoose.Schema({
         default: Date.now,
     }
 });
-
 
 module.exports = mongoose.model('Review', reviewSchema, 'review');
