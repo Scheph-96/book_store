@@ -75,7 +75,7 @@ const updateAuthor = (req, res, next) => {
       next(err);
     }
 
-    Author.findByIdAndUpdateId(req.params.id, formidableFormParser(fields), {
+    Author.findByIdAndUpdate(req.params.id, formidableFormParser(fields), {
       new: true,
     })
       .then((author) => {
