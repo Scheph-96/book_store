@@ -18,7 +18,7 @@ const createGenre = (req, res, next) => {
 
         genre.save()
             .then((result) => {
-                res.status(200).json({ auccess: true, message: "Genre created successfully" });
+                res.status(200).json({ success: true, message: "Genre created successfully" });
             })
             .catch(next);
     });

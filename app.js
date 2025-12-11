@@ -8,6 +8,8 @@ const orderRoutes = require('./routes/order.route');
 const reviewRoutes = require('./routes/review.route');
 const userRoutes = require('./routes/user.route');
 
+const { swaggerSpec, swaggerUi } = require("./swagger.js");
+
 require("dotenv").config();
 
 const app = express();
@@ -31,6 +33,12 @@ app.use((err, req, res, next) => {
   console.error(err);  
   return res.status(500).json({success: false, message: 'Unexpected error, Please try again later!'});
 });
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+    swaggerOptions: {
+      tryItOutEnabled: false, // globally disable "Try it out"
+    },
+  }));
 
 mongoose.connect(process.env.DB_CONNECTION_STRING)
   .then(() => {
