@@ -49,6 +49,6 @@ mongoose.connect(process.env.DB_CONNECTION_STRING)
   });
 
 const port = process.env.PORT || 2000;
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log("The server is running on http://locahost:2000");
 });

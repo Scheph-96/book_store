@@ -11,12 +11,12 @@ const options = {
       version: "1.0.0",
       description: `Node.js Express API with Swagger UI
       <br><br>
-      <a href="https://github.com">Visit Github Repo</a>
+      <a href="https://github.com/Scheph-96/book_store">Visit Github Repo</a>
       `,
     },
     servers: [
       {
-        url: `http://localhost:${port}`,
+        url: `https://book-store-ffup.onrender.com/`,
       },
     ],
   },
